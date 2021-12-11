@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="71k-Sh-Gf1">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--英単語検索-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Goro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VtM-iE-grB">
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Name" textLabel="TOt-g3-uZy" detailTextLabel="WWg-2M-0Kd" style="IBUITableViewCellStyleValue1" id="pey-LH-kRA">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pey-LH-kRA" id="FXA-3V-Lk6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TOt-g3-uZy">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WWg-2M-0Kd">
+                                                    <rect key="frame" x="261" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ORe-qM-OZp"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UJJ-01-9fW"/>
+                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="i5l-Th-T5u"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5I-zf-BwF">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <viewLayoutGuide key="safeArea" id="Ok5-SU-P9A"/>
+                                <items>
+                                    <barButtonItem title="favorite" id="xva-K5-o7d">
+                                        <connections>
+                                            <action selector="myActionJisakushu" destination="BYZ-38-t0r" id="M3l-dD-W9h"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JaE-YE-HVs"/>
+                                    <barButtonItem title="記憶済" id="4Rb-bl-GDR">
+                                        <connections>
+                                            <action selector="myActionKiokuzumi" destination="BYZ-38-t0r" id="03C-7s-uuL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="DUS-AZ-SFF"/>
+                                    <barButtonItem title="未記憶" id="H7t-Tf-XJd">
+                                        <connections>
+                                            <action selector="myActionMikioku" destination="BYZ-38-t0r" id="JVC-A0-fpG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="opG-aK-5JY"/>
+                                    <barButtonItem title="shuffle" id="iwg-f0-fgq">
+                                        <connections>
+                                            <action selector="shuffleButtonPushed" destination="BYZ-38-t0r" id="Ga4-TM-uyI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v5I-zf-BwF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="74P-iD-ahG"/>
+                            <constraint firstItem="v5I-zf-BwF" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="E2M-b3-JBB"/>
+                            <constraint firstItem="VtM-iE-grB" firstAttribute="trailing" secondItem="v5I-zf-BwF" secondAttribute="trailing" id="Gqx-z9-630"/>
+                            <constraint firstItem="VtM-iE-grB" firstAttribute="bottom" secondItem="v5I-zf-BwF" secondAttribute="top" id="Qhb-uJ-dNg"/>
+                            <constraint firstAttribute="trailing" secondItem="v5I-zf-BwF" secondAttribute="trailing" id="WAY-xd-RIJ"/>
+                            <constraint firstItem="VtM-iE-grB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eHp-PY-heK"/>
+                            <constraint firstItem="VtM-iE-grB" firstAttribute="leading" secondItem="v5I-zf-BwF" secondAttribute="leading" id="rdE-9H-nYR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="英単語検索" id="qN2-hc-dwN">
+                        <barButtonItem key="leftBarButtonItem" title="自作する" id="jPs-Sa-2iX">
+                            <connections>
+                                <action selector="myActionJisaku" destination="BYZ-38-t0r" id="Irn-ic-lAV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="myTableView" destination="VtM-iE-grB" id="F7Q-cn-EKJ"/>
+                        <outlet property="shuffleButton" destination="iwg-f0-fgq" id="yY2-dJ-ePx"/>
+                        <segue destination="Jp8-pn-b0z" kind="show" identifier="toJisakuView" id="2cz-Zd-rHn"/>
+                        <segue destination="AYU-XY-0tp" kind="show" identifier="toSubView" id="7Zh-TY-Qm9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817.6056338028169" y="120"/>
+        </scene>
+        <!--自作語呂入力-->
+        <scene sceneID="4zi-rA-Egc">
+            <objects>
+                <viewController title="自作語呂入力" id="Jp8-pn-b0z" customClass="JisakuViewController" customModule="Goro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FZl-JH-5Kp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="英単語" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="9ti-xm-YCl">
+                                <rect key="frame" x="0.0" y="80" width="155" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="日本語" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-7A-00U">
+                                <rect key="frame" x="165" y="80" width="155" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="語呂を入力して下さい。" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="r2z-5l-rhp">
+                                <rect key="frame" x="0.0" y="114" width="320" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9ti-xm-YCl" firstAttribute="leading" secondItem="vvC-IP-KoC" secondAttribute="leading" id="BKm-O1-wOA"/>
+                            <constraint firstItem="ODa-7A-00U" firstAttribute="trailing" secondItem="vvC-IP-KoC" secondAttribute="trailing" id="EFb-tA-QSl"/>
+                            <constraint firstItem="r2z-5l-rhp" firstAttribute="top" secondItem="9ti-xm-YCl" secondAttribute="bottom" constant="4" id="SFG-xK-brL"/>
+                            <constraint firstItem="r2z-5l-rhp" firstAttribute="leading" secondItem="vvC-IP-KoC" secondAttribute="leading" id="VLT-dd-8uS"/>
+                            <constraint firstItem="r2z-5l-rhp" firstAttribute="trailing" secondItem="vvC-IP-KoC" secondAttribute="trailing" id="bR7-ke-6l9"/>
+                            <constraint firstItem="ODa-7A-00U" firstAttribute="width" secondItem="9ti-xm-YCl" secondAttribute="width" id="i3w-If-5Uw"/>
+                            <constraint firstItem="ODa-7A-00U" firstAttribute="top" secondItem="vvC-IP-KoC" secondAttribute="top" constant="16" id="jKd-Bb-g0Y"/>
+                            <constraint firstItem="9ti-xm-YCl" firstAttribute="top" secondItem="vvC-IP-KoC" secondAttribute="top" constant="16" id="pOF-sG-erV"/>
+                            <constraint firstItem="ODa-7A-00U" firstAttribute="leading" secondItem="9ti-xm-YCl" secondAttribute="trailing" constant="10" id="rUV-Pg-srD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vvC-IP-KoC"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="自作語呂入力" id="BbM-l5-xVo">
+                        <barButtonItem key="rightBarButtonItem" title="完了" id="V3z-Hd-Tk1">
+                            <connections>
+                                <action selector="myActionKanryo" destination="Jp8-pn-b0z" id="8aG-FI-XiT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="EnglishField" destination="9ti-xm-YCl" id="wGf-ZZ-Qzi"/>
+                        <outlet property="GoroField" destination="r2z-5l-rhp" id="Mlz-8y-cI9"/>
+                        <outlet property="JapaneseField" destination="ODa-7A-00U" id="ZBb-tx-LEe"/>
+                        <outlet property="KanryoButton" destination="V3z-Hd-Tk1" id="0xA-hn-UiP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10D-pG-by2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560" y="119"/>
+        </scene>
+        <!--Sub View Controller-->
+        <scene sceneID="69m-ds-d0d">
+            <objects>
+                <viewController id="AYU-XY-0tp" customClass="SubViewController" customModule="Goro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2QG-WM-0Uc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="27" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hX-AE-aqP">
+                                <rect key="frame" x="20" y="74" width="280" height="128.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="english" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="jhj-T4-Nay">
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pronounce" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8oj-kl-srM">
+                                        <rect key="frame" x="0.0" y="27" width="82.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="japanese" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="o6Y-M0-9sG">
+                                        <rect key="frame" x="0.0" y="54" width="68.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="goro" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ch0-Mz-4jP">
+                                        <rect key="frame" x="0.0" y="81" width="35.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reibun" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kfk-fx-4KY">
+                                        <rect key="frame" x="0.0" y="108" width="48.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="860-8B-1UA">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <viewLayoutGuide key="safeArea" id="3Bz-fP-vcH"/>
+                                <items>
+                                    <barButtonItem title="All🔈" id="2Fv-vQ-eyP">
+                                        <connections>
+                                            <action selector="allYomiage" destination="AYU-XY-0tp" id="ACI-9A-85Z"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ExC-O5-WcZ"/>
+                                    <barButtonItem title="🇺🇸🔈" id="JzM-4p-ukR">
+                                        <connections>
+                                            <action selector="englishYomiage" destination="AYU-XY-0tp" id="8ep-My-Bsz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XGi-Lf-27r"/>
+                                    <barButtonItem title="🇯🇵🔈" id="blh-PR-mBv">
+                                        <connections>
+                                            <action selector="japaneseYomiage" destination="AYU-XY-0tp" id="kYG-iH-icz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Xg7-hf-zak"/>
+                                    <barButtonItem title="語🔈" id="L1h-mr-ZKN">
+                                        <connections>
+                                            <action selector="goroYomiage" destination="AYU-XY-0tp" id="9pS-4v-yv0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IuW-SX-sgM"/>
+                                    <barButtonItem title="例🔈" width="40" id="OLd-t0-LVh">
+                                        <connections>
+                                            <action selector="reibunYomiage" destination="AYU-XY-0tp" id="NKc-VZ-g4J"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="keN-7O-Q6C">
+                                <rect key="frame" x="57" y="476" width="206" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="keN-7O-Q6C" secondAttribute="height" multiplier="103:14" id="3Zp-eW-BnA"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="未記憶"/>
+                                    <segment title="記憶済"/>
+                                </segments>
+                                <connections>
+                                    <action selector="oboetaSelectorChanged" destination="AYU-XY-0tp" eventType="valueChanged" id="I2y-vw-ukF"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="860-8B-1UA" firstAttribute="top" secondItem="keN-7O-Q6C" secondAttribute="bottom" constant="20" id="1UW-as-Noa"/>
+                            <constraint firstItem="keN-7O-Q6C" firstAttribute="centerX" secondItem="2QG-WM-0Uc" secondAttribute="centerX" id="I53-8b-Kzy"/>
+                            <constraint firstItem="860-8B-1UA" firstAttribute="leading" secondItem="2QG-WM-0Uc" secondAttribute="leading" id="LVs-9V-Gg3"/>
+                            <constraint firstItem="7hX-AE-aqP" firstAttribute="leading" secondItem="rwn-xK-ARw" secondAttribute="leading" constant="20" id="QE9-RT-ZEw"/>
+                            <constraint firstItem="860-8B-1UA" firstAttribute="bottom" secondItem="rwn-xK-ARw" secondAttribute="bottom" id="SGS-qj-8tG"/>
+                            <constraint firstItem="rwn-xK-ARw" firstAttribute="trailing" secondItem="7hX-AE-aqP" secondAttribute="trailing" constant="20" id="Wmp-f0-fua"/>
+                            <constraint firstItem="860-8B-1UA" firstAttribute="centerX" secondItem="7hX-AE-aqP" secondAttribute="centerX" id="xeX-Pq-ewj"/>
+                            <constraint firstItem="7hX-AE-aqP" firstAttribute="top" secondItem="rwn-xK-ARw" secondAttribute="top" constant="10" id="zbK-kx-p6k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rwn-xK-ARw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ggG-Np-E1X">
+                        <barButtonItem key="rightBarButtonItem" title="☆favorite" id="3b8-i2-Vnh">
+                            <connections>
+                                <action selector="favoriteButtonPushed" destination="AYU-XY-0tp" id="MFB-Ei-I6o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="English" destination="jhj-T4-Nay" id="7Bv-GL-kAh"/>
+                        <outlet property="Goro" destination="Ch0-Mz-4jP" id="c6t-Y9-yYy"/>
+                        <outlet property="Japanese" destination="o6Y-M0-9sG" id="eLj-RC-ovT"/>
+                        <outlet property="Pronounce" destination="8oj-kl-srM" id="Qty-4o-Rhm"/>
+                        <outlet property="Reibun" destination="kfk-fx-4KY" id="ajc-YI-j6v"/>
+                        <outlet property="favoriteButton" destination="3b8-i2-Vnh" id="LaU-hg-NjD"/>
+                        <outlet property="oboetaSelector" destination="keN-7O-Q6C" id="1hn-60-g1b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yke-G9-7uO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="843"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fJS-ph-Id8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="71k-Sh-Gf1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vCY-gK-r6k">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WRy-Ww-Xtz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXD-l6-2Zu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="119"/>
+        </scene>
+    </scenes>
+</document>
